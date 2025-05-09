@@ -55,7 +55,7 @@ if st.session_state.current_user:
    st.subheader("🔍 Potential Matches:")
    if matches:
      for match in matches:
-       st.markdown(f"**{match.name}** can teach you **{match.skill_offer}** and you can learn **{match.skill_want}**")
+       st.markdown(f"**{match.name}** can teach you **{match.skill_offer}** and you can learn **{match.skill_want}** **contact-email:{match.email}**")
    else:
      st.info("No potential matches found")
 
