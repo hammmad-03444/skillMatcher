@@ -50,12 +50,12 @@ if submit_button and name and email and skill_offer and skill_want:
   st.success(f"Welcome {name} you have joinded Skill Swap successfully!")
 
 if st.session_state.current_user:
-  matches=st.session_state.skill_matcher.find_matches(st.session_state.current_user)
+   matches=st.session_state.skill_matcher.find_matches(st.session_state.current_user)
 
-st.subheader("🔍 Potential Matches:")
-if matches:
-  for match in matches:
-    st.markdown(f"**{match.name}** can teach you **{match.skill_offer}** and you can learn **{match.skill_want}**")
-else:
-  st.info("No potential matches found")
+   st.subheader("🔍 Potential Matches:")
+   if matches:
+     for match in matches:
+       st.markdown(f"**{match.name}** can teach you **{match.skill_offer}** and you can learn **{match.skill_want}**")
+   else:
+     st.info("No potential matches found")
 
