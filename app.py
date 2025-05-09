@@ -44,7 +44,7 @@ with st.form("user_form"):
   submit_button = st.form_submit_button("Submit")
 
 if submit_button and name and email and skill_offer and skill_want:
-  new_user = User(name, email, skill_offer, skill_wany)
+  new_user = User(name, email, skill_offer, skill_want)
   st.session_state.skill_matcher.add_user(new_user)
   st.session_state.current_user = new_user
   st.success(f"Welcome {name} you have joinded Skill Swap successfully!")
@@ -55,7 +55,7 @@ if st.session_state.current_user:
 st.subheader("🔍 Potential Matches:")
 if matches:
   for match in matches:
-    st.markdown(f"**{match.name}** can teach you **{match.skill.offer}** and you can learn **{match.skill.want}**")
+    st.markdown(f"**{match.name}** can teach you **{match.skill_offer}** and you can learn **{match.skill_want}**")
 else:
   st.info("No potential matches found")
 
